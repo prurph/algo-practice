@@ -4,18 +4,13 @@
 # min if a lower element is found; then swap the current index with index_min if
 # they are different
 
-require 'pry'
-
 def selection_sort(arr)
-  len = arr.length
-  (len - 1).times do |i|
+  (arr.length - 1).times do |i|
     index_min = i
-    (i + 1).upto(len - 1) do |j|
+    (i+1).upto(arr.length - 1) do |j|
       index_min = j if arr[j] < arr[index_min]
     end
-    arr[index_min], arr[i] = arr[i], arr[index_min] unless index_min == i
+    arr[i], arr[index_min] = arr[index_min], arr[i] unless i == index_min
   end
   arr
 end
-
-binding.pry

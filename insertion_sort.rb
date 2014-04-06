@@ -1,21 +1,14 @@
 # insertion sort: O(n**n) average
 # stable, in-place, faster for already sorted lists (often used to add to them)
-# remember: pick key of arr[i], iterate to the left of arr[i] until j == 0 or
-# key >= a[j-1] (to the left), then stick key there
-
-require 'pry'
+# remember: delete value at i, then iterate to the right until get to the end or
+# arr[j-1] > value and then insert the value at j+1
 
 def insertion_sort(arr)
   1.upto(arr.length - 1) do |i|
-    value = arr[i]
-    j = i
-    while j > 0 && arr[j-1] > value
-      arr[j] = arr[j-1]
-      j -= 1
-    end
-    arr[j] = value
+    value = arr.delete_at(i)
+    j = i - 1
+    j -= 1 while j >= 0 && arr[j-1] > value
+    arr.insert(j+1, value)
   end
   arr
 end
-
-binding.pry

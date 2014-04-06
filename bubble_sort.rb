@@ -3,8 +3,6 @@
 # remember: start at index 0, look ahead and swap if necessary
 # largest terms "bubble up"
 
-require 'pry'
-
 def bubble_sort(arr)
   loop do
     swapped = false
@@ -18,5 +16,3 @@ def bubble_sort(arr)
   end
   arr
 end
-
-binding.pry

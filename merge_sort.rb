@@ -6,8 +6,6 @@
 # compares left.first to right.first, appends the smaller to the result of
 # merge(left, right) with the appended thing taken out with drop(1), or similar
 
-require 'pry'
-
 def merge_sort(arr)
   return arr if arr.length <= 1
   mid = (arr.length / 2) # automatically floored by Fixnum division
@@ -27,5 +25,3 @@ def merge(left, right)
     [right.first] + merge(left, right.drop(1))
   end
 end
-
-binding.pry

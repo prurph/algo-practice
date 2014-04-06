@@ -3,19 +3,21 @@
 # remember: pick pivot, recursively divide into less and greater
 # base case: arr.length == 0 or 1 is already sorted, just return it
 
-require 'pry'
-
 def quick_sort(arr)
-  return arr if arr.length <= 1
+  if arr.length <= 1
+    arr
+  else
+    less    = Array.new()
+    greater = Array.new()
+    pivot   = arr.delete_at(rand(0..arr.length - 1))
 
-  pivot   = arr.delete_at(rand(0..arr.length - 1))
-  less    = Array.new()
-  greater = Array.new()
-
-  arr.each do |value|
-    pivot > value ? less << value : greater << value
+    arr.each do |value|
+      if value <= pivot
+        less << value
+      else
+        greater << value
+      end
+    end
+    quick_sort(less) + [pivot] + quick_sort(greater)
   end
-  quick_sort(less) + [pivot] + quick_sort(greater)
 end
-
-binding.pry
