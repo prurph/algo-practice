@@ -14,41 +14,41 @@ describe 'Sort Methods' do
 
   describe '#bubble_sort' do
     it 'sorts arrays' do
-      expect(bubble_sort @array1).to match_array @array1.sort
-      expect(bubble_sort @array2).to match_array @array2.sort
-      expect(bubble_sort @array3).to match_array @array3.sort
+      expect(@array1.bubble_sort).to match_array @array1.sort
+      expect(@array2.bubble_sort).to match_array @array2.sort
+      expect(@array3.bubble_sort).to match_array @array3.sort
     end
   end
 
   describe '#insertion_sort' do
     it 'sorts arrays' do
-      expect(insertion_sort @array1).to match_array @array1.sort
-      expect(insertion_sort @array2).to match_array @array2.sort
-      expect(insertion_sort @array3).to match_array @array3.sort
+      expect(@array1.insertion_sort).to match_array @array1.sort
+      expect(@array2.insertion_sort).to match_array @array2.sort
+      expect(@array3.insertion_sort).to match_array @array3.sort
     end
   end
 
   describe '#selection_sort' do
     it 'sorts arrays' do
-      expect(selection_sort @array1).to match_array @array1.sort
-      expect(selection_sort @array2).to match_array @array2.sort
-      expect(selection_sort @array3).to match_array @array3.sort
+      expect(@array1.selection_sort).to match_array @array1.sort
+      expect(@array2.selection_sort).to match_array @array2.sort
+      expect(@array3.selection_sort).to match_array @array3.sort
     end
   end
 
-  # describe '#quick_sort' do
-  #   it 'sorts arrays' do
-  #     expect(quick_sort @array1).to match_array @array1.sort
-  #     expect(quick_sort @array2).to match_array @array2.sort
-  #     expect(quick_sort @array3).to match_array @array3.sort
-  #   end
-  # end
+  describe '#quick_sort' do
+    it 'sorts arrays' do
+      expect(@array1.quick_sort).to match_array @array1.sort
+      expect(@array2.quick_sort).to match_array @array2.sort
+      expect(@array3.quick_sort).to match_array @array3.sort
+    end
+  end
 
   describe '#merge_sort' do
     it 'sorts arrays' do
-      expect(merge_sort @array1).to match_array @array1.sort
-      expect(merge_sort @array2).to match_array @array2.sort
-      expect(merge_sort @array3).to match_array @array3.sort
+      expect(@array1.merge_sort).to match_array @array1.sort
+      expect(@array2.merge_sort).to match_array @array2.sort
+      expect(@array3.merge_sort).to match_array @array3.sort
     end
   end
 end
